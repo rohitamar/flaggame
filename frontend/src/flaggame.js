@@ -7,7 +7,11 @@ class FlagGame extends Component {
     super(props);
     this.state = {
       guess: '',
-      leaderboard: [], // We'll store an array of { user, score } or just user strings
+      username: '',
+      leaderboard: {},
+      orderFlags: [],
+      imageIndex: 0,
+      received: false
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -17,8 +21,11 @@ class FlagGame extends Component {
 
   componentDidMount() {
     const username = prompt('Enter your name:');
-    if(!username) return;
-    this.socket = new WebSocket('ws://localhost:3010');
+    if (!username) return;
+    this.setState({
+      username: username
+    });
+    this.socket = new WebSocket('wss://b5aa-2601-85-c680-6140-84fc-7260-db80-8944.ngrok-free.app');
     this.socket.onopen = () => {
       this.socket.send(JSON.stringify({
         type: 'username',
@@ -36,10 +43,20 @@ class FlagGame extends Component {
 
   handleServerMessage(event) {
     const data = JSON.parse(event.data);
-
     if (data.type === 'leaderboard') {
-      const updatedLeaderboard = data.leaderboard
-      this.setState({ leaderboard: updatedLeaderboard });
+      const updatedLeaderboard = data.leaderboard;
+      if (this.state.received) {
+        this.setState({
+          leaderboard: updatedLeaderboard
+        });
+      } else {
+        this.setState({
+          leaderboard: updatedLeaderboard,
+          orderFlags: Object.keys(data.orderFlags),
+          answerFlags: Object.values(data.orderFlags),
+          received: true,
+        });
+      }
     }
   }
 
@@ -47,49 +64,65 @@ class FlagGame extends Component {
     this.setState({ guess: e.target.value });
   }
 
-  handleSubmit() {
-    const { guess } = this.state;
-    console.log('Submitted guess:', guess);
+  handleSubmit(e) {
+    e.preventDefault();
+    const { username, guess, answerFlags, imageIndex, leaderboard } = this.state;
 
+    console.log("answers: ", answerFlags[imageIndex]);
+    const isIncluded = answerFlags[imageIndex].some(
+      (flag) => flag.toLowerCase() === guess.toLowerCase()
+    );
+    let v = isIncluded ? 1 : 0;
+    leaderboard[username] = leaderboard[username] + v;
 
-    this.setState({ guess: '' });
+    this.socket.send(JSON.stringify({
+      type: 'leaderboard',
+      leaderboard: leaderboard
+    }));
+
+    this.setState((prevState) => ({
+        guess: '',
+        imageIndex: prevState.imageIndex + 1,
+        leaderboard: leaderboard
+    }));
+
   }
 
   render() {
-    const { guess, leaderboard } = this.state;
-    leaderboard.map((entry, idx) => (
-      console.log(entry, idx)
-    ));
+    const { guess, leaderboard, orderFlags, imageIndex } = this.state;
+    const leaderboardEntries = Object.entries(leaderboard);
+
     return (
       <div>
-        <div className = "leaderboard">
-          {leaderboard.map((entry, idx) => (
-            <div key={idx}>
-              <b>{entry.username}:</b> {entry.score}
+        <div className="leaderboard">
+          {leaderboardEntries.map(([username, score], index) => (
+            <div key={index}>
+              <b>{username}:</b> {score}
             </div>
           ))}
         </div>
 
-        <div className = "gamewindow">
+        <form className="gamewindow">
           <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/800px-Flag_of_the_People%27s_Republic_of_China.svg.png"
-              alt="Country Flag"
-              className = "gameimage"
+            src={orderFlags[imageIndex]}
+            alt="Country Flag"
+            className="gameimage"
           />
           <input
             type="text"
             value={guess}
             onChange={this.handleInputChange}
             placeholder="Guess the country"
-            className = "gameinput"
+            className="gameinput"
           />
-          <button 
+          <button
             onClick={this.handleSubmit}
-            className = "gamebutton"
+            className="gamebutton"
+            type="submit"
           >
             Submit
           </button>
-        </div>
+        </form>
       </div>
     );
   }

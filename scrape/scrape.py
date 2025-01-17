@@ -15,7 +15,7 @@ for element in elements:
         s = f"https://flagpedia.net/{img_tag['src']}"
         flag_url = s.replace("h80", "w580")
     if flag_url:
-        lines.append(f"{flag_url},{ctry}")
+        lines.append(f"{flag_url},{ctry.lower()}")
 
 with open("flaglinks.txt", "w") as f:
     for line in lines:
