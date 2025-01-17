@@ -1,0 +1,34 @@
+.leaderboard {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 1rem 2.5rem 0rem 0rem;
+}
+
+.gamewindow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding-top: 2rem;
+}
+
+.gameimage {
+    max-width: 400px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.gameinput {
+    width: 250px;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.gamebutton {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+  
