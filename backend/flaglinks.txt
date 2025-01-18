@@ -1,5 +1,5 @@
 https://flagpedia.net//data/flags/w580/af.png,Afghanistan
-https://flagpedia.net//data/flags/w580/ax.png,�land Islands
+https://flagpedia.net//data/flags/w580/ax.png,Aland Islands
 https://flagpedia.net//data/flags/w580/al.png,Albania
 https://flagpedia.net//data/flags/w580/dz.png,Algeria
 https://flagpedia.net//data/flags/w580/as.png,American Samoa
@@ -52,10 +52,10 @@ https://flagpedia.net//data/flags/w580/cg.png,Republic of the Congo
 https://flagpedia.net//data/flags/w580/cd.png,DR Congo
 https://flagpedia.net//data/flags/w580/ck.png,Cook Islands
 https://flagpedia.net//data/flags/w580/cr.png,Costa Rica
-https://flagpedia.net//data/flags/w580/ci.png,C�te d'Ivoire
+https://flagpedia.net//data/flags/w580/ci.png,Cote d'Ivoire
 https://flagpedia.net//data/flags/w580/hr.png,Croatia
 https://flagpedia.net//data/flags/w580/cu.png,Cuba
-https://flagpedia.net//data/flags/w580/cw.png,Cura�ao
+https://flagpedia.net//data/flags/w580/cw.png,Curacao
 https://flagpedia.net//data/flags/w580/cy.png,Cyprus
 https://flagpedia.net//data/flags/w580/cz.png,Czechia
 https://flagpedia.net//data/flags/w580/dk.png,Denmark
@@ -181,11 +181,11 @@ https://flagpedia.net//data/flags/w580/pl.png,Poland
 https://flagpedia.net//data/flags/w580/pt.png,Portugal
 https://flagpedia.net//data/flags/w580/pr.png,Puerto Rico
 https://flagpedia.net//data/flags/w580/qa.png,Qatar
-https://flagpedia.net//data/flags/w580/re.png,R�union
+https://flagpedia.net//data/flags/w580/re.png,Reunion
 https://flagpedia.net//data/flags/w580/ro.png,Romania
 https://flagpedia.net//data/flags/w580/ru.png,Russia
 https://flagpedia.net//data/flags/w580/rw.png,Rwanda
-https://flagpedia.net//data/flags/w580/bl.png,Saint Barth�lemy
+https://flagpedia.net//data/flags/w580/bl.png,Saint Barthelemy
 https://flagpedia.net//data/flags/w580/sh.png,Saint Helena, Ascension, Tristan da Cunha
 https://flagpedia.net//data/flags/w580/kn.png,Saint Kitts and Nevis
 https://flagpedia.net//data/flags/w580/lc.png,Saint Lucia
@@ -194,7 +194,7 @@ https://flagpedia.net//data/flags/w580/pm.png,Saint Pierre and Miquelon
 https://flagpedia.net//data/flags/w580/vc.png,Saint Vincent and the Grenadines
 https://flagpedia.net//data/flags/w580/ws.png,Samoa
 https://flagpedia.net//data/flags/w580/sm.png,San Marino
-https://flagpedia.net//data/flags/w580/st.png,S�o Tom� and Pr�ncipe
+https://flagpedia.net//data/flags/w580/st.png,Sao Tome and Principe
 https://flagpedia.net//data/flags/w580/sa.png,Saudi Arabia
 https://flagpedia.net//data/flags/w580/gb-sct.png,Scotland
 https://flagpedia.net//data/flags/w580/sn.png,Senegal
@@ -236,7 +236,7 @@ https://flagpedia.net//data/flags/w580/ug.png,Uganda
 https://flagpedia.net//data/flags/w580/ua.png,Ukraine
 https://flagpedia.net//data/flags/w580/ae.png,United Arab Emirates
 https://flagpedia.net//data/flags/w580/gb.png,United Kingdom,UK
-https://flagpedia.net//data/flags/w580/us.png,United States,USA
+https://flagpedia.net//data/flags/w580/us.png,United States,USA,United States of America
 https://flagpedia.net//data/flags/w580/um.png,United States Minor Outlying Islands
 https://flagpedia.net//data/flags/w580/uy.png,Uruguay
 https://flagpedia.net//data/flags/w580/uz.png,Uzbekistan

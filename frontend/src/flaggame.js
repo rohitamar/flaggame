@@ -25,7 +25,7 @@ class FlagGame extends Component {
     this.setState({
       username: username
     });
-    this.socket = new WebSocket('wss://b5aa-2601-85-c680-6140-84fc-7260-db80-8944.ngrok-free.app');
+    this.socket = new WebSocket('http://localhost:3010/');
     this.socket.onopen = () => {
       this.socket.send(JSON.stringify({
         type: 'username',
@@ -112,7 +112,7 @@ class FlagGame extends Component {
             type="text"
             value={guess}
             onChange={this.handleInputChange}
-            placeholder="Guess the country"
+            placeholder="What country is this?"
             className="gameinput"
           />
           <button

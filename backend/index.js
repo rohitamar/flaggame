@@ -29,7 +29,6 @@ function shuffleHashMap(hashMap) {
     return shuffledMap;
 }
 
-
 flagMap = loadFlagLinks('flaglinks.txt');
 shuffled = shuffleHashMap(flagMap);
 
